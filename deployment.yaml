@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: petclinic
-        image: adrf968/petclinic:4
+        image: adrf968/petclinic:20
         ports:
         - containerPort: 80
         imagePullPolicy: IfNotPresent
