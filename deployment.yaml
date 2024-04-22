@@ -1,8 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app.kubernetes.io/instance: petclinic
   name: petclinic-deployment
-  namespace: default  # Specify your namespace here
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -14,8 +16,8 @@ spec:
         label: app
     spec:
       containers:
-      - name: petclinic
-        image: adrf968/petclinic:20
-        ports:
-        - containerPort: 80
-        imagePullPolicy: IfNotPresent
+        - image: 'adrf968/petclinic:20'
+          imagePullPolicy: IfNotPresent
+          name: petclinic
+          ports:
+            - containerPort: 80
